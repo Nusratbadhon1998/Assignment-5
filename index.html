@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Paribahan</title>
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="./icons/bus-icon.png" type="image/x-icon">
+
+    <!-- Tailnwind & DaisyUI links  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Customize Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': 'rgb(29, 209, 0);',
+                        'secondary-bg-1': 'rgba(29, 209, 0, 0.1);',
+                        'secondary-bg-2': '#1DD10026',
+                        'secondary-bg-3': 'rgba(29, 209, 0, 0.4)',
+                        'text-primary': '#030712',
+                        'text-secondary-1': '#03071299',
+                        'text-secondary-2': '#03071280',
+
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Customize Css style -->
+    <style>
+        .raleway {
+            font-family: "Raleway", sans-serif;
+        }
+
+        .poppins {
+            font-family: "Poppins", sans-serif;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header class="max-w-6xl mx-auto space-y-5">
+        <!-- NavBar starts Here -->
+        <nav class="flex justify-evenly items-center raleway pt-7">
+            <div class="text-3xl text-text-primary font-extrabold">Ninja Paribahan</div>
+            <div>
+                <ul class=" hidden lg:visible lg:flex space-x-6 text-[16px] text-[#030712B3]">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Destination</a></li>
+                    <li><a href="#">Search</a></li>
+                </ul>
+            </div>
+            <div>
+
+                <button class="btn bg-secondary-bg-2 text-primary-bg border-secondary-bg-3 font-bold ">
+                    Bus
+                    <img src="./images/bus-icon.png" alt="">
+                </button>
+            </div>
+        </nav>
+        <!-- NavBar Ends here -->
+        <!-- Banner Section -->
+        <div class="bg-[url(./images/banner.png)] min-h-screen object-cover bg-no-repeat lg:relative">
+            <div class="w-3/4mx-auto flex flex-col justify-center items-center h-96 text-center space-y-5 pt-40">
+
+                <h2 class="text-white  text-3xl lg:text-6xl font-extrabold">End-to-End Travel with <br> <span
+                        class="text-primary-bg">Ninja Paribahan</span></h2>
+                <p class=" w-[300px] lg:w-[500px] text-white text-xs lg:text-[16px] font-normal">Yes, you can run unit
+                    tests and view the results directly within the app. The integrated testing features allow for a
+                    streamlined .</p>
+
+                <button
+                    class="btn hover:bg-secondary-bg-2 hover:text-primary-bg bg-primary-bg text-black border-none">Buy
+                    Tickets</button>
+
+            </div>
+        </div>
+
+        <!-- Banner Card section -->
+        <div
+            class=" p-3 lg:p-0 flex items-center  justify-center *:flex *:space-x-4 lg:absolute lg:-bottom-2 lg:left-1/2 lg:-translate-x-1/2">
+            <!-- Card-1 -->
+            <div class="banner-card">
+                <div>
+                    <img src="./images/people.png" alt="">
+                </div>
+                <div class="space-y-2">
+                    <h1 class="poppins font-bold text-2xl">500K+</h1>
+                    <p class="text-xs font-light poppins text-text-secondaty-3">Registered User</p>
+                </div>
+
+            </div>
+            <!-- Card-2 -->
+            <div class="banner-card">
+                <div>
+                    <img src="./images/ticket-cupon.png" alt="">
+                </div>
+                <div class="space-y-2">
+                    <h1 class="poppins font-bold text-2xl">1.7 Lacs</h1>
+                    <p class="text-xs font-light poppins text-text-secondaty-3">Ticket Sold</p>
+                </div>
+
+            </div>
+            <!-- Card-3 -->
+            <div class="banner-card">
+                <div>
+                    <img src="./images/stoppage.png" alt="">
+                </div>
+                <div class="space-y-2">
+                    <h1 class="poppins font-bold text-2xl">80K+</h1>
+                    <p class="text-xs font-light poppins text-text-secondaty-3">Rental Partners</p>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+    <!-- Header section ends here -->
+
+    <main class="">
+        <!-- Offer section -->
+        <section class="max-w-6xl mx-auto min-h-screen raleway space-y-8 flex flex-col text-center ">
+            <h1 class="font-extrabold text-4xl text-center">Best offers for you</h1>
+
+            <div class="flex flex-col lg:flex-row space-y-4 lg:space-x-5">
+
+                <div class="bg-[#FFBF0F] w-[520px] h-[220px] rounded-3xl flex">
+                    <div class="flex-1 p-10">
+                        <h1 class="font-extrabold text-[32px] poppins">15% OFF</h1>
+                        <p class="font-bold text-[16px]">on your next purchase</p>
+                        <p class="text-xs font-light text-text-secondary-3">use by January 2024</p>
+                    </div>
+                    <div>
+                        <img src="./images/cupon-devider.png" alt="">
+                    </div>
+                    <div class="p-10 flex flex-col justify-center items-center">
+                        <h1 class="text-2xl font-bold">NEW15</h1>
+                        <p class="text-xs font-light text-text-secondary-3">Coupon Code</p>
+                    </div>
+
+                </div>
+
+                <div class="bg-[#F78C9C] w-[520px] h-[220px] rounded-3xl flex ">
+
+                    <div class="flex-1 p-10">
+                        <h1 class="font-extrabold text-[32px] poppins">20% OFF</h1>
+                        <p class="font-bold text-[16px]">on your next purchase</p>
+                        <p class="text-xs font-light text-text-secondary-3">use by January 2024</p>
+                    </div>
+                    <div>
+                        <img src="./images/cupon-devider.png" alt="">
+                    </div>
+                    <div class="p-10 flex flex-col justify-center items-center">
+                        <h1 class="text-2xl font-bold">COUPLE20</h1>
+                        <p class="text-xs font-light text-text-secondary-3">Coupon Code</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="btn w-32 mx-auto border-primary-bg text-black hover:bg-primary-bg">See all offers</button>
+
+        </section>
+        <!-- Offer section ends here -->
+
+        <!-- Ticket Interface section starts here -->
+
+        <!-- Ticket interface section ends here -->
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+
+</body>
+
+</html>

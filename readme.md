@@ -1,7 +1,7 @@
-# Programmming Hero Paribahan
+# Ninja Paribahan
 
 Developing the Future of Transportation: Where Innovation Meets Mobility
 
 ## Coach -009 | Web
 
-<img src="./Landing Page Design.jpg" />
+<img src="./images/banner.png" />
