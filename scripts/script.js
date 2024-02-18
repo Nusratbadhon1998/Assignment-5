@@ -20,6 +20,7 @@ for (const seat of seats) {
         seat.setAttribute("disabled", true);
         let seatName = seat.innerText;
         arr.push(seatName);
+    
 
         if (arr.length === 4) {
             let applyBtn = document.getElementById('apply-btn');
@@ -60,7 +61,6 @@ for (const seat of seats) {
 }
 
 
-// Call the function to initialize seat selection
 
 
 let applyBtn = document.getElementById('apply-btn')
@@ -69,6 +69,7 @@ applyBtn.addEventListener('click', function (e) {
 
     let coupon = document.getElementById('coupon-input-field')
     if (coupon.value === 'NEW15' || coupon.value === 'Couple 20') {
+        document.getElementById('discounted-price').classList.remove('hidden')
 
         if (coupon.value === 'NEW15') {
             calculateDiscount(.15)
@@ -90,30 +91,44 @@ applyBtn.addEventListener('click', function (e) {
 
 
 
+document.getElementById('continue-btn').addEventListener('click', (e) => {
+    while (arr.length > 0) {
+        arr.pop();
+      }      
 
-// document.getElementById('continue-btn').addEventListener('click', (e) => {
-//     for (const seat of seats) {
+    for (const seat of seats) {
 
-//         seat.style.backgroundColor = '#F7F8F8'
-//         seat.style.color = 'black'
-//         setText('ticket-count', 0);
-//         setText('seat-left-count', 40);
-//         setText('total-price', 0)
-//         setText('grand-price', 0)
-
-
-//         let phoneNumber = document.getElementById('phone-number')
-//         let passengerName = document.getElementById('passenger-name')
-//         let email = document.getElementById('email')
-
-//         phoneNumber.value = ''
-//         passengerName.value = ''
-//         email.value = ''
+        seat.removeAttribute("disabled");
+        seat.style.backgroundColor = '#F7F8F8'
+        seat.style.color = 'black'
+        setText('ticket-count', 0);
+        setText('seat-left-count', 40);
+        setText('total-price', 0)
+        setText('grand-price', 0)
 
 
+        let phoneNumber = document.getElementById('phone-number')
+        let passengerName = document.getElementById('passenger-name')
+        let email = document.getElementById('email')
+
+        phoneNumber.value = ''
+        passengerName.value = ''
+        email.value = ''
+
+        setText('display-price','')
+        setText('discounted-price','')
+
+        document.getElementById('discounted-price').classList.add('hidden')
+        document.getElementById('coupon-field').classList.remove('hidden')
+
+        let applyBtn= document.getElementById('apply-btn')
+        let couponField= document.getElementById('coupon-input-field')
+        couponField.value=''
+        applyBtn.setAttribute('disabled',true);
+        let nextBtn= document.getElementById('final-btn')
+        nextBtn.setAttribute('disabled',true);
+
+    }
 
 
-//     }
-
-
-// })
+})
