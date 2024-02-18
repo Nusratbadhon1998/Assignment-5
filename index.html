@@ -130,14 +130,14 @@
 
         <!-- Banner Card section -->
         <div
-            class="flex items-center justify-center *:flex *:space-x-4 absolute top-[70%] left-1/2 -translate-x-1/2">
+            class="flex items-center justify-center *:flex *:space-x-4 lg:absolute lg:top-[70%] lg:left-1/2 lg:-translate-x-1/2">
             <!-- Card-1 -->
             <div class="banner-card">
                 <div>
                     <img src="./images/people.png" alt="">
                 </div>
                 <div class="space-y-2">
-                    <h1 class="poppins font-bold text-2xl">500K+</h1>
+                    <h1 class="poppins font-bold lg:text-2xl">500K+</h1>
                     <p class="text-xs font-light poppins text-text-secondaty-3">Registered User</p>
                 </div>
 
@@ -148,7 +148,7 @@
                     <img src="./images/ticket-cupon.png" alt="">
                 </div>
                 <div class="space-y-2">
-                    <h1 class="poppins font-bold text-2xl">1.7 Lacs</h1>
+                    <h1 class="poppins font-bold lg:text-2xl">1.7Lacs</h1>
                     <p class="text-xs font-light poppins text-text-secondaty-3">Ticket Sold</p>
                 </div>
 
@@ -159,7 +159,7 @@
                     <img src="./images/stoppage.png" alt="">
                 </div>
                 <div class="space-y-2">
-                    <h1 class="poppins font-bold text-2xl">80K+</h1>
+                    <h1 class="poppins font-bold lg:text-2xl">80K+</h1>
                     <p class="text-xs font-light poppins text-text-secondaty-3">Rental Partners</p>
                 </div>
 
@@ -174,9 +174,9 @@
         <section class="max-w-6xl mx-auto raleway space-y-8 flex flex-col text-center ">
             <h1 class="font-extrabold text-4xl text-center pt-14">Best offers for you</h1>
 
-            <div class="flex flex-col lg:flex-row space-y-4 lg:space-x-5 pt-16">
+            <div class="flex flex-col lg:flex-row gap-6 lg:gap-0 space-y-4 lg:space-x-5 pt-16">
 
-                <div class="bg-[#FFBF0F] w-[520px] h-[220px] rounded-3xl flex">
+                <div class="bg-[#FFBF0F] lg:w-[520px] lg:h-[220px] rounded-3xl flex">
                     <div class="flex-1 p-10">
                         <h1 class="font-extrabold text-[32px] poppins">15% OFF</h1>
                         <p class="font-bold text-[16px]">on your next purchase</p>
@@ -194,7 +194,7 @@
 
 
 
-                <div class="bg-[#F78C9C] w-[520px] h-[220px] rounded-3xl flex" style="
+                <div class="bg-[#F78C9C] lg:w-[520px] lg:h-[220px] rounded-3xl flex" style="
               margin-top: 0px;">
 
                     <div class="flex-1 p-10">
@@ -222,7 +222,7 @@
         <!-- Ticket Interface section starts here -->
 
 
-        <section id="ticket-section" class="bg-[#F7F8F8] border-t-2 border-t-primary-bg pb-52 rounded-3xl pt-14 text-center flex flex-col space-y-14 *:max-w-6xl *:mx-auto mt-12 raleway">
+        <section id="ticket-section" class="bg-[#F7F8F8] border-t-2 border-t-primary-bg pb-52 rounded-3xl pt-14 text-center flex flex-col lg:space-y-14 *:max-w-6xl *:mx-auto mt-12 raleway space-y-28">
 
             <!-- Heading Part -->
             <!-- *********************************************8 -->
@@ -236,7 +236,7 @@
             <!-- ***************************************** -->
             <!-- Route Departure Card -->
             <div class="container">
-                <div class="bg-[#ffff] w-full h-[30%] mx-auto rounded-xl flex">
+                <div class="bg-[#ffff] w-full h-[30%] mx-auto rounded-xl flex flex-col lg:flex-row">
                     <!-- Ninja Paribahan -->
                     <div class="flex-1 flex-col p-10 space-y-4">
 
@@ -275,7 +275,7 @@
                             <hr class="mt-5">
 
                             <div
-                                class="*:bg-[#0307120D]  *:flex *:justify-center *:items-center  *:p-6 space-x-5 mt-6 *:rounded-xl font-bold text-sm text-text-secondary-3">
+                                class="*:bg-[#0307120D]  *:flex *:justify-center *:items-center *:p-2 lg:*:p-6 space-x-5 mt-6 *:rounded-xl font-bold text-sm text-text-secondary-3">
                                 <div>
                                     <h1>Boarding Point - Laxmipur</h1>
 
@@ -294,7 +294,7 @@
 
                     </div>
                     <!-- divider -->
-                    <div>
+                    <div class="hidden lg:flex">
                         <img class="h-full w-full" src="./images/info-devider.png" alt="">
                     </div>
                     <!-- 550 Taka -->
@@ -312,9 +312,9 @@
             <!-- Seat Section -->
 
             <!-- *****************************Main*********************************************** -->
-            <div class="container bg-[#ffff] flex rounded-2xl">
+            <div class="container bg-[#ffff] flex flex-col lg:flex-row rounded-2xl">
 
-                <div class="space-y-5 w-[60%] p-5">
+                <div class="space-y-5 w-full lg:w-[60%] p-5">
                     <h1 class="text-left font-bold text-2xl">Select Your Seat</h1>
                     <hr>
                     <div class="flex justify-between *:flex *:space-x-2">
@@ -411,12 +411,12 @@
                 </div>
 
 
-                <div class="my-6">
+                <div class="my-6 hidden lg:flex">
                     <img class="w-full h-full" src="./images/Line 1.png" alt="">
                 </div>
 
 
-                <div class="p-5 w-2/5">
+                <div class="p-5 w-full lg:w-2/5">
                     <!--  -->
 
                     <h1 class="text-left font-bold text-2xl">Select Your Seat</h1>
@@ -460,13 +460,13 @@
                     <div class="space-y-4 mt-5 flex flex-col">
                         <label class="block text-left font-bold" for="">Passenger Name*</label>
 
-                        <input type="text" placeholder="Enter your name"
+                        <input id="passenger-name" type="text" placeholder="Enter your name"
                             class="input input-bordered  w-full max-w-xs" />
                         <label class="block text-left font-bold" for="">Phone Number*</label>
                         <input id="phone-number" type="number" placeholder="Enter your number"
                             class="input input-bordered  w-full max-w-xs noscroll" />
                         <label class="block text-left font-bold" for="">Email ID</label>
-                        <input type="email" placeholder="Enter your email"
+                        <input id="email" type="email" placeholder="Enter your email"
                             class="input input-bordered  w-full max-w-xs" />
                         <!-- <button id="final-btn"
                             class="btn btn-block bg-primary-bg text-white hover:bg-secondary-bg-1 hover:text-black"
@@ -490,7 +490,7 @@
                                 <div class="modal-action">
                                     <form method="dialog">
                                         <!-- if there is a button in form, it will close the modal -->
-                                        <button onclick="reset()"
+                                        <button id="continue-btn"
                                             class="btn bg-primary-bg text-white hover:bg-secondary-bg-1 hover:text-black ">Continue</button>
                                     </form>
                                 </div>
@@ -515,20 +515,20 @@
     </main>
 
     <footer class="bg-black text-white raleway">
-        <div class="max-w-6xl min-h-52 mx-auto flex justify-between items-center">
+        <div class="max-w-6xl min-h-52 mx-auto flex flex-col lg:flex-row justify-center items-center lg:justify-between lg:items-center p-14 lg:p-0">
 
             <div class="space-y-3">
-                <h1 class="text-3xl font-bold">Ninja Paribahan</h1>
-                <p class="text-left text-[#FFFFFFCC] w-[60%]">P-Ticket is a digital platform to make your
+                <h1 class="text-center lg:text-left text-3xl font-bold">Ninja Paribahan</h1>
+                <p class="text-center lg:text-left text-[#FFFFFFCC] w-full lg:w-[60%]">P-Ticket is a digital platform to make your
                     daily commuting better</p>
 
             </div>
-            <div class="flex flex-col justify-start items-start space-y-4">
+            <div class="flex flex-row lg:flex-col justify-center items-center lg:justify-start lg:items-start space-y-4 gap-4 mt-5 lg:mt-0">
                 <p class="font-bold">Download Our App</p>
-                <div class="flex gap-2 justify-center items-center">
+                <div class=" flex gap-2 justify-center items-center">
 
                     <img src="./icons/playstore.png.png" alt="">
-                    <h1 class="font-bold text-2xl">Google Play</h1>
+                    <h1 class="font-bold lg:text-2xl">Google Play</h1>
                 </div>
             </div>
 

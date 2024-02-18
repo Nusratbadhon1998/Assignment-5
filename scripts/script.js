@@ -12,54 +12,42 @@ for (const card of bannerCardsContainer) {
 }
 
 // ---------------------------------------------------------------------------------------------------
+let seats = document.getElementsByClassName('seat');
+
 let arr = [];
-// get all seat
-let seats = document.getElementsByClassName('seat')
-
 for (const seat of seats) {
-
-
     seat.addEventListener('click', function (e) {
-
-        seat.setAttribute("disabled", true)
-
-        let seatName = seat.innerText
-
-        // Displaying Seat name price and class
-        displayResult(seatName)
-
-        arr.push(seat.innerText)
+        seat.setAttribute("disabled", true);
+        let seatName = seat.innerText;
+        arr.push(seatName);
 
         if (arr.length === 4) {
-            let applyBtn = document.getElementById('apply-btn')
-            applyBtn.removeAttribute('disabled')
-        }
-        else if (arr.length > 4) {
-            alert("AR kina jabe na")
-            return
+            let applyBtn = document.getElementById('apply-btn');
+            applyBtn.removeAttribute('disabled');
+        } else if (arr.length > 4) {
+            alert("You cannot select more than 4 seats");
+            return;
         }
 
+        // Displaying Seat name price and class
+        displayResult(seatName);
 
         let ticketCount = getIntegerValue('ticket-count');
         setText('ticket-count', ticketCount + 1);
 
+        let seatLeft = getIntegerValue('seat-left-count');
+        setText('seat-left-count', seatLeft - 1);
 
-
-        let seatLeft = getIntegerValue('seat-left-count')
-        setText('seat-left-count', seatLeft - 1)
-
-
-        let totalPrice = getIntegerValue('total-price')
-        setText('total-price', totalPrice + 550)
-        setText('grand-price', totalPrice + 550)
-
+        let totalPrice = getIntegerValue('total-price');
+        setText('total-price', totalPrice + 550);
+        setText('grand-price', totalPrice + 550);
 
         // Set Color and text color
-        seat.style.backgroundColor = "rgb(29, 209, 0)",
-        seat.style.color = "white"
+        seat.style.backgroundColor = "rgb(29, 209, 0)";
+        seat.style.color = "white";
 
-        let phoneNumber = document.getElementById('phone-number')
-        let next = document.getElementById('final-btn')
+        let phoneNumber = document.getElementById('phone-number');
+        let next = document.getElementById('final-btn');
 
         phoneNumber.addEventListener('input', (e) => {
             if (phoneNumber.value.trim() !== '') {
@@ -67,11 +55,12 @@ for (const seat of seats) {
             } else {
                 next.disabled = true;
             }
-        })
-
-    })
+        });
+    });
 }
 
+
+// Call the function to initialize seat selection
 
 
 let applyBtn = document.getElementById('apply-btn')
@@ -79,47 +68,52 @@ let applyBtn = document.getElementById('apply-btn')
 applyBtn.addEventListener('click', function (e) {
 
     let coupon = document.getElementById('coupon-input-field')
-
-    let discount = document.getElementById('discounted-price')
-
-    let totalPrice = getIntegerValue('total-price')
-
-    let p1 = document.createElement('p')
-    p1.innerText = 'Discounted Price'
-    discount.appendChild(p1)
-
-    let p2 = document.createElement('p')
-
-
-    if (coupon.value === 'NEW15' || coupon.value === 'Couple20') {
+    if (coupon.value === 'NEW15' || coupon.value === 'Couple 20') {
 
         if (coupon.value === 'NEW15') {
-            discountedPrice = totalPrice * 0.15
-
-            p2.innerText = discountedPrice
-
-            discount.appendChild(p2)
-            setText('grand-price', totalPrice - discountedPrice) 
-
-
+            calculateDiscount(.15)
         }
         else {
 
-            discountedPrice = totalPrice * 0.2
-
-            p2.innerText = discountedPrice
-
-            discount.appendChild(p2)
-            setText('grand-price', totalPrice - discountedPrice) 
-
+            calculateDiscount(.2)
         }
+
         document.getElementById('coupon-field').classList.add('hidden')
 
     }
+
     else {
-        alert("wrong coupon")
+        alert("Wrong coupon")
     }
 
 })
 
 
+
+
+// document.getElementById('continue-btn').addEventListener('click', (e) => {
+//     for (const seat of seats) {
+
+//         seat.style.backgroundColor = '#F7F8F8'
+//         seat.style.color = 'black'
+//         setText('ticket-count', 0);
+//         setText('seat-left-count', 40);
+//         setText('total-price', 0)
+//         setText('grand-price', 0)
+
+
+//         let phoneNumber = document.getElementById('phone-number')
+//         let passengerName = document.getElementById('passenger-name')
+//         let email = document.getElementById('email')
+
+//         phoneNumber.value = ''
+//         passengerName.value = ''
+//         email.value = ''
+
+
+
+
+//     }
+
+
+// })
