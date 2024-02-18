@@ -6,14 +6,13 @@ for (const card of bannerCardsContainer) {
     card.style.backgroundColor = "white",
         card.style.padding = "15px",
         card.style.borderRadius = "10px",
-        card.style.marginRight = "15px",
+        card.style.marginRight = "45px",
         card.style.borderBottom = "5px solid rgb(29, 209, 0)"
 
 }
 
+// ---------------------------------------------------------------------------------------------------
 let arr = [];
-let flag = false
-
 // get all seat
 let seats = document.getElementsByClassName('seat')
 
@@ -22,11 +21,14 @@ for (const seat of seats) {
 
     seat.addEventListener('click', function (e) {
 
-
-
         seat.setAttribute("disabled", true)
-        arr.push(seat.innerText)
 
+        let seatName = seat.innerText
+
+        // Displaying Seat name price and class
+        displayResult(seatName)
+
+        arr.push(seat.innerText)
 
         if (arr.length === 4) {
             let applyBtn = document.getElementById('apply-btn')
@@ -37,60 +39,39 @@ for (const seat of seats) {
             return
         }
 
-        // Seat left
 
-        // parseint innertext
-
-        let seatLeft = parseInt(document.getElementById('seat-left-count').innerText)
-        document.getElementById('seat-left-count').innerText = seatLeft - 1
-
-        // Show Price in display box
-        let display = document.getElementById('display-price')
+        let ticketCount = getIntegerValue('ticket-count');
+        setText('ticket-count', ticketCount + 1);
 
 
 
-        let li = document.createElement('li')
-        let p1 = document.createElement('p')
-        let p2 = document.createElement('p')
-        let p3 = document.createElement('p')
-
-        p1.innerText = seat.innerText
-        p2.innerText = 'Economy'
-        p3.innerText = 550
-        li.appendChild(p1)
-        li.appendChild(p2)
-        li.appendChild(p3)
-        display.appendChild(li)
-
-        // Total
-        // ParseINt innertext
-        let totalPrice = parseInt(document.getElementById('total-price').innerText)
-        document.getElementById('total-price').innerText = totalPrice + 550
+        let seatLeft = getIntegerValue('seat-left-count')
+        setText('seat-left-count', seatLeft - 1)
 
 
-        // shudhu inner text
-        document.getElementById('grand-price').innerText = totalPrice + 550
+        let totalPrice = getIntegerValue('total-price')
+        setText('total-price', totalPrice + 550)
+        setText('grand-price', totalPrice + 550)
 
 
-
+        // Set Color and text color
         seat.style.backgroundColor = "rgb(29, 209, 0)",
         seat.style.color = "white"
-        
+
+        let phoneNumber = document.getElementById('phone-number')
+        let next = document.getElementById('final-btn')
+
+        phoneNumber.addEventListener('input', (e) => {
+            if (phoneNumber.value.trim() !== '') {
+                next.disabled = false;
+            } else {
+                next.disabled = true;
+            }
+        })
+
     })
-
 }
 
-let phoneNumber = document.getElementById('phone-number')
-let next = document.getElementById('final-btn')
-console.log(next)
-
-
-if (flag===false && phoneNumber.length > 0) {
-    next.removeAttribute('disabled')
-
-}
-
-console.log(flag)
 
 
 let applyBtn = document.getElementById('apply-btn')
@@ -101,8 +82,7 @@ applyBtn.addEventListener('click', function (e) {
 
     let discount = document.getElementById('discounted-price')
 
-    let totalPrice = parseInt(document.getElementById('total-price').innerText)
-
+    let totalPrice = getIntegerValue('total-price')
 
     let p1 = document.createElement('p')
     p1.innerText = 'Discounted Price'
@@ -119,7 +99,7 @@ applyBtn.addEventListener('click', function (e) {
             p2.innerText = discountedPrice
 
             discount.appendChild(p2)
-            document.getElementById('grand-price').innerText = totalPrice - discountedPrice
+            setText('grand-price', totalPrice - discountedPrice) 
 
 
         }
@@ -130,7 +110,7 @@ applyBtn.addEventListener('click', function (e) {
             p2.innerText = discountedPrice
 
             discount.appendChild(p2)
-            document.getElementById('grand-price').innerText = totalPrice - discountedPrice
+            setText('grand-price', totalPrice - discountedPrice) 
 
         }
         document.getElementById('coupon-field').classList.add('hidden')
@@ -139,9 +119,6 @@ applyBtn.addEventListener('click', function (e) {
     else {
         alert("wrong coupon")
     }
-
-
-
 
 })
 
